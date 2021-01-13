@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_13_093439) do
+ActiveRecord::Schema.define(version: 2021_01_13_102341) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 2021_01_13_093439) do
     t.integer "genre_id", null: false
     t.index ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id"
     t.index ["movie_id", "genre_id"], name: "index_genres_movies_on_movie_id_and_genre_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "image_path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "imageable_type"
+    t.integer "imageable_id"
+    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
   end
 
   create_table "languages", force: :cascade do |t|
