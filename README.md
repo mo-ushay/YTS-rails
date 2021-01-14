@@ -1,1 +1,1 @@
-# YTS-rails
+# YTS-Rails Demo Project
