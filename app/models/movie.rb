@@ -15,7 +15,7 @@ class Movie < ApplicationRecord
   has_many :linked_images, class_name: :Image, as: :imageable
   has_one :profile_photo, class_name: :Image, as: :imageable
 
-  has_many :likes, class_name :Like, as: :likeable
+  has_many :likes, class_name: :Like, as: :likeable
 
   validates :name, presence: true
   validates :synopsis, presence: true

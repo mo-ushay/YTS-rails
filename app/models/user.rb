@@ -11,6 +11,6 @@ class User < ApplicationRecord
   has_many :rated_movies, through: :feedback, class_name: :Movie
 
   validates :name, presence: true
-  validates :user_name, presence: true, uniquness: true
+  validates :user_name, presence: true, uniqueness: true
 
 end
