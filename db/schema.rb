@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2021_01_13_170731) do
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
-    t.integer "no_of_downloads"
+    t.integer "downloads"
     t.text "synopsis"
     t.date "release_date"
     t.boolean "is_featured"
