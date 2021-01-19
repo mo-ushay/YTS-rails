@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :comments, through: :likes, source: :likeable, source_type: 'Comment'
   has_many :Movies, through: :likes, source: :likeable, source_type: 'Movie'
 
-  validates :name, presence: true
-  validates :user_name, presence: true, uniqueness: true
+  #validates :name, presence: true
+  #validates :user_name, presence: true, uniqueness: true
 
 end

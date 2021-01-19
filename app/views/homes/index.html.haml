@@ -1,15 +1,25 @@
 //index for Home Page (container for Popular and Recent movies)
 .container-fluid.homepage-container
   .popular-downloads-container
-    .container
-      .row
-        %h2.popular-downloads-wrapper
-          Popular Downloads
-       =render partial: "shared/movie_row", locals: {movies: @movies_on_downlaods}
+  .container
+  .row
+  %h2.popular-downloads-wrapper
+    Popular Downloads
+  =render partial: "shared/movie_row", locals: {movies: @movies_on_downlaods}
+.recent-releases-container
+  .container
+  .row
+  %h2.recent-releases-wrapper
+  Recent Releases 
+  =render partial: "shared/movie_row", locals: {movies: @recent_releases}
 
-  .recent-releases-container
-    .container
-      .row
-        %h2.recent-releases-wrapper
-          Recent Releases
-      =render partial: "shared/movie_row", locals: {movies: @recent_releases}
+
+
+
+
+
+
+
+
+
+

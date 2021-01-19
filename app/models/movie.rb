@@ -13,7 +13,7 @@ class Movie < ApplicationRecord
   has_many :likes, class_name: :Like, as: :likeable
 
   belongs_to :created_by, class_name: :User, inverse_of: 'movies_created', foreign_key: 'user_id'
-  
+
   has_one :profile_photo, class_name: :Image, as: :imageable
 
   validates :name, presence: true
@@ -21,8 +21,8 @@ class Movie < ApplicationRecord
   validates :release_date, presence: true
   validates :language, presence: true
 
-  scope :order_by_downloads, -> { order(:downloads => desc)}
-  scope :recent_releases, -> { order(:release_date => desc)}
+  scope :order_by_downloads, -> { order(downloads: :desc) }
+  scope :recent_releases, -> { order(release_date: :desc) }
   # Ex:- scope :active, -> {where(:active => true)}
   # Ex:- scope :active, -> {where(:active => true)}
 end
