@@ -1,0 +1,11 @@
+ content_for :head do
+  %link{:rel => 'stylesheet',:href => '/assets/movie_block.css'}
+
+%div
+  %div
+    = image_tag  "pic.png", :class => 'movie_block'
+  %div
+    %p{style: 'color: #fff'}
+      = movie.name
+    %p{style: 'color: #919191'}
+      = movie.release_date
