@@ -35,7 +35,7 @@ movie = Movie.where(name: 'The Queens Gambit').find_or_create_by!(
   release_date: '25-09-2020',
   user_id: user.id
 )
-movie.video_quality << video_quality[:'480p']
+movie.video_quality << video_quality[:'4K']
 movie.genre << genre[:sci_fi]
 movie.genre << genre[:thriller]
 
