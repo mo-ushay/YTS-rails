@@ -57,6 +57,7 @@ end
 gem 'bootstrap'
 gem 'carrierwave'
 gem 'devise'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'yaml_db'
