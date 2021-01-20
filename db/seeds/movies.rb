@@ -1,5 +1,21 @@
 user = User.find_by_email 'ushay@ushay.com'
 
+genre = {
+  comedy: Genre.find_by_name('Comedy'),
+  action: Genre.find_by_name('Action'),
+  horror: Genre.find_by_name('Horror'),
+  sci_fi: Genre.find_by_name('Sci-fI'),
+  thriller: Genre.find_by_name('Thriller'),
+  adventure: Genre.find_by_name('Adventure')
+}
+
+video_quality = {
+  '4K': VideoQuality.find_by_resolution('4K'),
+  '1080p': VideoQuality.find_by_resolution('1080p'),
+  '720p': VideoQuality.find_by_resolution('720p'),
+  '480p': VideoQuality.find_by_resolution('480p')
+}
+
 movie = Movie.where(name: 'Wonder Woman 1982').find_or_create_by!(
   name: 'Wonder Woman 1984',
   is_featured: true,
@@ -65,18 +81,3 @@ movie.genre << genre[:action]
 movie.genre << genre[:thriller]
 movie.genre << genre[:sci_fi]
 
-genres = {
-  comedy: Genre.find_by_name('Comedy'),
-  action: Genre.find_by_name('Action'),
-  horror: Genre.find_by_name('Horror'),
-  sci_fi: Genre.find_by_name('Sci-fI'),
-  thriller: Genre.find_by_name('Thriller'),
-  adventure: Genre.find_by_name('Adventure')
-}
-
-video_quality = {
-  '4K': VideoQuality.find_by_resolution('4K'),
-  '1080p': VideoQuality.find_by_resolution('1080p'),
-  '720p': VideoQuality.find_by_resolution('720p'),
-  '480p': VideoQuality.find_by_resolution('480p')
-}
