@@ -10,10 +10,10 @@ movies = {
 }
 
 actors = {
-  Ushay: Movie.find_by_name('Ushay'),
-  Jason_Statham: Movie.find_by_name('Jason Statham'),
-  Gal_Gaddot: Movie.find_by_name('Gal Gaddot'),
-  Liam_Neeson: Movie.find_by_name('Liam Neeson'),
+  Ushay: Actor.find_by_name('Ushay'),
+  Jason_Statham: Actor.find_by_name('Jason Statham'),
+  Gal_Gaddot: Actor.find_by_name('Gal Gaddot'),
+  Liam_Neeson: Actor.find_by_name('Liam Neeson'),
 }
 
 MovieRole.where(
