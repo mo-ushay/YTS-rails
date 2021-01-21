@@ -32,3 +32,5 @@ load "#{Rails.root}/db/seeds/comments.rb"
 
 puts 'Seeding your reviews!!'
 load "#{Rails.root}/db/seeds/reviews.rb"
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
