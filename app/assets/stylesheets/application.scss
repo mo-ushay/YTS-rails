@@ -20,16 +20,16 @@
   padding-left: 0;
   padding-right: 0;
 }
-.popular-downloads-container{
-  background-color: #3a1313;
+.total-downloads-container{
+  background-color: #141a16;
   text-align: center;
 }
 
 .recent-releases-container{
-  background-color: #3a1313;
+  background-color: #141a16;
 }
 
-.popular-downloads-wrapper{
+.total-downloads-wrapper{
   border-bottom: 1px solid rgba(54, 46, 46, 0.2);
   color: #fff;
   width: 100%;
@@ -38,6 +38,6 @@
 }
 
 .recent-releases-wrapper{
-  @extend .popular-downloads-wrapper;
+  @extend .total-downloads-wrapper;
   margin-top: 50px;
 }

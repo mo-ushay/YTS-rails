@@ -20,8 +20,8 @@ class Movie < ApplicationRecord
   validates :synopsis, presence: true
   validates :release_date, presence: true
 
-  scope :order_by_downloads, -> { order(downloads: :desc) }
-  scope :recent_releases, -> { order(release_date: :desc) }
+  #scope :total_downloads, -> { order(downloads: :desc) }
+  #scope :recent_releases, -> { order(release_date: :desc) }
   # Ex:- scope :active, -> {where(:active => true)}
   # Ex:- scope :active, -> {where(:active => true)}
 end

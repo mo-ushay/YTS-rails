@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def index
-    @movies_on_downloads = Movie.order_by_downloads.take(4)
-    @recent_releases = Movie.recent_releases.take(5)
+    @total_downloads = Movie.take(3)
+    @recent_releases = Movie.all
   end
 end
