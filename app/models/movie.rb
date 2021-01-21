@@ -19,7 +19,6 @@ class Movie < ApplicationRecord
   validates :name, presence: true
   validates :synopsis, presence: true
   validates :release_date, presence: true
-  validates :language, presence: true
 
   scope :order_by_downloads, -> { order(downloads: :desc) }
   scope :recent_releases, -> { order(release_date: :desc) }

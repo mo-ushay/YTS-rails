@@ -2,75 +2,90 @@ DIRECTOR = 'director'.freeze
 ACTOR = 'actor'.freeze
 
 movies = {
-  Wonder_Woman_1982: Movie.find_by_name('Wonder Woman 1982'),
-  Tenet: Movie.find_by_name('Tenet'),
-  The_Queens_Gambit: Movie.find_by_name('The Queens Gambit'),
-  Pakistani_Movie: Movie.find_by_name('Pakistani Movie'),
-  James_Bond: Movie.find_by_name('James Bond')
+  wonder_woman: Movie.find_by_name('Wonder Woman'),
+  tenet: Movie.find_by_name('Tenet'),
+  the_queens_gambit: Movie.find_by_name('The Queens Gambit'),
+  pakistani_movie: Movie.find_by_name('Pakistani Movie'),
+  james_bond: Movie.find_by_name('James Bond')
 }
 
 actors = {
-  Ushay: Actor.find_by_name('Ushay'),
-  Jason_Statham: Actor.find_by_name('Jason Statham'),
-  Gal_Gaddot: Actor.find_by_name('Gal Gaddot'),
-  Liam_Neeson: Actor.find_by_name('Liam Neeson'),
+  ushay: Actor.find_by_name('Ushay'),
+  jason_statham: Actor.find_by_name('Jason_Statham'),
+  gal_gaddot: Actor.find_by_name('Gal_Gaddot'),
+  liam_neeson: Actor.find_by_name('Liam_Neeson'),
 }
 
 MovieRole.where(
-  actor_id: actors[:Gal_Gaddot].id, movie_id: movies[:Wonder_Woman_1982].id, role_played: ACTOR).find_or_create_by!(
-  actor: actors[ :Gal_Gaddot ],
-  movie: movies[:Wonder_Woman_1982],
+  actor_id: actors[:gal_gaddot].id, movie_id: movies[:wonder_woman].id, role_played: ACTOR).find_or_create_by!(
+  actor: actors[:gal_gaddot],
+  movie: movies[:wonder_woman],
   role_played: ACTOR,
   acting_as: 'Lead'
 )
 MovieRole.where(
-  actor_id: actors[:Jason_Statham].id, movie_id: movies[:Wonder_Woman_1982].id, role_played: DIRECTOR).find_or_create_by!(
-  actor: actors[:Jason_Statham],
-  movie: movies[:Wonder_Woman_1982],
+  actor_id: actors[:jason_statham].id, movie_id: movies[:wonder_woman].id, role_played: DIRECTOR).find_or_create_by!(
+  actor: actors[:jason_statham],
+  movie: movies[:wonder_woman],
   role_played: DIRECTOR
 )
 
 MovieRole.where(
-  actor_id: actors[:Ushay].id, movie_id: movies[:Pakistani_Movie].id, role_played: DIRECTOR).find_or_create_by!(
-  actor: actors[:Ushay],
-  movie: movies[:Pakistani_Movie],
+  actor_id: actors[:ushay].id, movie_id: movies[:pakistani_movie].id, role_played: DIRECTOR).find_or_create_by!(
+  actor: actors[:ushay],
+  movie: movies[:pakistani_movie],
   role_played: DIRECTOR
 )
 
 MovieRole.where(
-  actor_id: actors[:Jason_Statham].id, movie_id: movies[:Pakistani_Movie].id, role_played: ACTOR).find_or_create_by!(
-  actor: actors[:Jason_Statham],
-  movie: movies[:Pakistani_Movie],
+  actor_id: actors[:jason_statham].id, movie_id: movies[:pakistani_movie].id, role_played: ACTOR).find_or_create_by!(
+  actor: actors[:jason_statham],
+  movie: movies[:pakistani_movie],
   role_played: ACTOR,
   acting_as: 'Lead'
 )
 
 MovieRole.where(
-  actor_id: actors[:Jason_Statham].id, movie_id: movies[:Tenet].id, role_played: ACTOR).find_or_create_by!(
-  actor: actors[:Jason_Statham],
-  movie: movies[:Tenet],
+  actor_id: actors[:jason_statham].id, movie_id: movies[:tenet].id, role_played: ACTOR).find_or_create_by!(
+  actor: actors[:jason_statham],
+  movie: movies[:tenet],
   role_played: ACTOR,
   acting_as: 'Supporting'
 )
 
 MovieRole.where(
-  actor_id: actors[:Ushay].id, movie_id: movies[:Tenet].id, role_played: DIRECTOR).find_or_create_by!(
-  actor: actors[:Ushay],
-  movie: movies[:Tenet],
+  actor_id: actors[:ushay].id, movie_id: movies[:tenet].id, role_played: DIRECTOR).find_or_create_by!(
+  actor: actors[:ushay],
+  movie: movies[:tenet],
   role_played: DIRECTOR,
   )
 
 MovieRole.where(
-  actor_id: actors[:Liam_Neeson].id, movie_id: movies[:James_Bond].id, role_played: DIRECTOR).find_or_create_by!(
-  actor: actors[ :Liam_Neeson ],
-  movie: movies[:James_Bond],
+  actor_id: actors[:liam_neeson].id, movie_id: movies[:james_bond].id, role_played: DIRECTOR).find_or_create_by!(
+  actor: actors[ :liam_neeson ],
+  movie: movies[:james_bond],
   role_played: DIRECTOR
 )
 
 MovieRole.where(
-  actor_id: actors[:Gal_Gaddot].id, movie_id: movies[:James_Bond].id, role_played: ACTOR).find_or_create_by!(
-  actor: actors[ :Gal_Gaddot ],
-  movie: movies[:James_Bond],
+  actor_id: actors[:gal_gaddot].id, movie_id: movies[:james_bond].id, role_played: ACTOR).find_or_create_by!(
+  actor: actors[ :gal_gaddot ],
+  movie: movies[:james_bond],
   role_played: ACTOR,
   acting_as: 'Lead'
+  )
+
+  MovieRole.where(
+    actor_id: actors[:ushay].id, movie_id: movies[:the_queens_gambit].id, role_played: DIRECTOR).find_or_create_by!(
+    actor: actors[ :ushay ],
+    movie: movies[:the_queens_gambit],
+    role_played: DIRECTOR
+  )
+  
+  MovieRole.where(
+    actor_id: actors[:liam_neeson].id, movie_id: movies[:the_queens_gambit].id, role_played: ACTOR).find_or_create_by!(
+    actor: actors[ :liam_neeson ],
+    movie: movies[:the_queens_gambit],
+    role_played: ACTOR,
+    acting_as: 'Supporting'
   )

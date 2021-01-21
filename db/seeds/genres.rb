@@ -7,9 +7,9 @@
 #   adventure: Genre.find_by_name('Adventure')
 # }
 
-Genre.where(name: 'comedy').find_or_create_by!(name: 'Comedy')
-Genre.where(name: 'action').find_or_create_by!(name: 'Action')
-Genre.where(name: 'horror').find_or_create_by!(name: 'Horror')
-Genre.where(name: 'sci_fi').find_or_create_by!(name: 'Sci-fi')
-Genre.where(name: 'thriller').find_or_create_by!(name: 'Thriller')
-Genre.where(name: 'adventure').find_or_create_by!(name: 'Adventure')
+Genre.where(category: 'Comedy').find_or_create_by!(category: 'Comedy')
+Genre.where(category: 'Action').find_or_create_by!(category: 'Action')
+Genre.where(category: 'Horror').find_or_create_by!(category: 'Horror')
+Genre.where(category: 'Sci_Fi').find_or_create_by!(category: 'Sci_Fi')
+Genre.where(category: 'Thriller').find_or_create_by!(category: 'Thriller')
+Genre.where(category: 'Adventure').find_or_create_by!(category: 'Adventure')

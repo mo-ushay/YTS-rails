@@ -1,7 +1,7 @@
 class MovieRole < ApplicationRecord
   belongs_to :movie
   belongs_to :actor
-  roles = Array.new('actor', 'director')
+  enum roles: %w[actor director]
 
   validates :role_played, presence: true, inclusion: {
     in: roles,

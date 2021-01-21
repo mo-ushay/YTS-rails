@@ -1,7 +1,7 @@
 random_review = ('A'...'Z').to_a.shuffle.first(35).join
 
 movies = [
-  Movie.find_by_name('Wonder Woman 1982'),
+  Movie.find_by_name('Wonder Woman'),
   Movie.find_by_name('Tenet'),
   Movie.find_by_name('The Queens Gambit'),
   Movie.find_by_name('Pakistani Movie'),
@@ -17,7 +17,7 @@ users = [
 
 users.each do |user|
   movies.each do |movie|
-    Review.where(movie_id: movie_id, user_id: user_id).find_or_create_by!(
+    Review.where(movie_id: movie.id, user_id: user.id).find_or_create_by!(
       user: user,
       movie: movie,
       content: random_review

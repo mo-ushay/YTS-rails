@@ -1,5 +1,5 @@
 movies = [
-  Movie.find_by_name('Wonder Woman 1982'),
+  Movie.find_by_name('Wonder Woman'),
   Movie.find_by_name('Tenet'),
   Movie.find_by_name('The Queens Gambit'),
   Movie.find_by_name('Pakistani Movie'),
@@ -15,7 +15,7 @@ users = [
 
 users.each do |user|
   movies.each do |movie|
-    Rating.where(movie_id: movie_id, user_id: user_id).find_or_create_by!(
+    Rating.where(movie_id: movie.id, user_id: user.id).find_or_create_by!(
       user: user,
       movie: movie,
       value: rand(0...10) 

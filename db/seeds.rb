@@ -5,3 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Seeding your user accounts!!'
+load "#{Rails.root}/db/seeds/users.rb"
+
+puts 'Seeding your genre info!!'
+load "#{Rails.root}/db/seeds/genres.rb"
+
+puts 'Seeding your video qualities!!'
+load "#{Rails.root}/db/seeds/video_qualities.rb"
+
+puts 'Seeding your actors!!'
+load "#{Rails.root}/db/seeds/actors.rb"
+
+puts 'Seeding your movies!!'
+load "#{Rails.root}/db/seeds/movies.rb"
+
+puts 'Seeding your movie roles!!'
+load "#{Rails.root}/db/seeds/movie_roles.rb"
+
+puts 'Seeding your ratings!!'
+load "#{Rails.root}/db/seeds/ratings.rb"
+
+puts 'Seeding your comment info!!'
+load "#{Rails.root}/db/seeds/comments.rb"
+
+puts 'Seeding your reviews!!'
+load "#{Rails.root}/db/seeds/reviews.rb"

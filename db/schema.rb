@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2021_01_13_170731) do
     t.string "introduction"
     t.string "name"
     t.string "abilities"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
