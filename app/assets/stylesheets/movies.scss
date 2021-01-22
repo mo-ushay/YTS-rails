@@ -1,3 +1,105 @@
 // Place all the styles related to the movies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.individual-page-container{
+  background-color: #2f2f2f;
+}
+
+.individual-movie-container{
+  margin: auto;
+  width: 70%;
+  color: antiquewhite;
+}
+
+.individual-movie-title{
+  line-height: 20px;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+}
+
+.individual-movie-info{
+  line-height: 20px;
+  margin-bottom: 13px;
+  font-size: 1.2em;
+}
+
+.individual-movie-details{
+  padding-top: 40px;
+}
+
+.individual-movie-cover{
+  height: 288px;
+}
+
+.individual-movie-plot{
+  margin-top: 50px;
+}
+
+.individual-movie-review-block{
+  padding: 30px 0px;
+  border-bottom: 1px solid #2f2f2f;
+}
+
+.individual-movie-review{
+  color: #717171;
+}
+
+.individual-movie-review-content{
+  color: #919191;
+  word-break: break-all;
+}
+
+.individual-movie-synopsis{
+  color: azure;
+  margin-top: 30px;
+}
+
+.individual-movie-director-container{
+  padding-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 1px solid #141614;
+}
+
+.individual-movie-staff{
+  border-radius: 150px;
+  height: 40px;
+  width: 40px;
+}
+
+.individual-movie-creation-time{
+  color: antiquewhite;
+}
+
+h1,h2,h3{
+  color: antiquewhite;
+}
+
+.individual-movie-cast-container{
+  margin-top: 16px; 
+}
+
+.individual-movie-comments-container{
+  max-height: 700px;
+  overflow-y: auto;
+}
+
+.individual-movie-comment-block{
+  display: flex;
+  margin-bottom: 5px;
+  background-color:#171717;
+  padding: 20px
+}
+
+.individual-movie-comment{
+  margin-left: 24px;
+  color: #919191;
+}
+
+.individual-movie-comment-content{
+  color: #FFFFFF;
+}
+
+.individual-movie-feedback{
+  margin-top: 40px;
+}
+

@@ -2,14 +2,40 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.intro-container{
-  background-color: #1e3318;
+#homepage-container{
+  padding-left: 0;
+  padding-right: 0;
 }
-
-.total-downloads-container{
-  background-color: #1e3318;
-}
-
 .recent-releases-container{
   background-color: #1e3318;
+}
+.intro-container{
+  background-color: #141a16;
+  text-align: center;
+  font-size: large;
+}
+.total-downloads-container{
+  background-color: #141a16;
+  text-align: center;
+}
+
+.total-downloads-wrapper{
+  border-bottom: 1px solid rgba(54, 46, 46, 0.2);
+  color: #fff;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.recent-releases-wrapper{
+  @extend .total-downloads-wrapper;
+  margin-top: 50px;
+}
+
+.into-wrapper{
+  border-bottom: 1px solid rgba(54, 46, 46, 0.2);
+  color: #fff;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 50px;
 }

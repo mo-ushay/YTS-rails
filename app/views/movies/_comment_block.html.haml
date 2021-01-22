@@ -1,0 +1,9 @@
+.individual-movie-comment-block
+  %div
+    = image_tag "cover.jpg", class: "individual-movie-staff"
+  .individual-movie-comment
+    %div
+      = comment.user.user_name
+      = comment.created_at
+    .individual-movie-comment-content
+      = comment.content
