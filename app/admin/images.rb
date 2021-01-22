@@ -5,7 +5,7 @@ ActiveAdmin.register Image do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :image_path, :imageable_type, :imageable_id
+  permit_params :image_path, :imageable_type, :imageable_id
   #
   # or
   #

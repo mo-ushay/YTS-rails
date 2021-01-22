@@ -5,7 +5,7 @@ ActiveAdmin.register MovieRole do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :acting_as, :role_played, :movie_id, :actor_id, :roles
+  permit_params :acting_as, :role_played, :movie_id, :actor_id, :roles
   #
   # or
   #
