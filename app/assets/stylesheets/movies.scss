@@ -66,6 +66,12 @@
   width: 40px;
 }
 
+.individual-similar-movies{
+  border-radius: 150px;
+  height: 40px;
+  width: 40px;
+}
+
 .individual-movie-creation-time{
   color: antiquewhite;
 }
@@ -89,6 +95,14 @@ h1,h2,h3{
   background-color:#171717;
   padding: 20px
 }
+
+.individual-movie-similar-block{
+  display: flex;
+  margin-bottom: 5px;
+  background-color:#171717;
+  padding: 20px
+}
+
 
 .individual-movie-comment{
   margin-left: 24px;

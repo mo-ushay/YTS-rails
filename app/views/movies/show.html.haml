@@ -14,7 +14,7 @@
           %h2.individual-movie-info
             = @movie.release_date
           %h2.individual-movie-info
-            = 'Action / Adventure'
+            = @genres
           %h2.individual-movie-info
             <i> Available in: </i>
             = '4K'
@@ -23,7 +23,7 @@
           %h2.individual-movie-info
             = @movie.rating
       .col-lg-3
-        %h2.individual-movie-info
+        %h2.individual-similar-movies
           Similar Movies
   .container.individual-movie-plot
     .row
