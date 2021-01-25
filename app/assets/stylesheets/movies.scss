@@ -103,7 +103,6 @@ h1,h2,h3{
   padding: 20px
 }
 
-
 .individual-movie-comment{
   margin-left: 24px;
   color: #919191;
@@ -113,27 +112,37 @@ h1,h2,h3{
   color: #FFFFFF;
 }
 
+.individual-movies-result-container{
+  background-color: #1d1d1d;
+}
+
+.individual-movies-result-wrapper{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 15px;
+}
+
 .individual-movie-feedback{
   margin-top: 40px;
 }
 
-.show-movies{
+.individual-movies{
   text-align: center;
 }
 
-.show-movies-search-container{
+.individual-movies-search-container{
   background-color: #171717;
   padding: 50px 0px;
 }
 
-.show-movies-result-container{
-  background-color: #1d1d1d;
-}
-
-.show-movies-result-wrapper{
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px 15px;
+#temp{
+  font-weight: bold;
+  font-size: 16px;
+  height: 36px;
+  background-image: none;
+  border-radius: 0px;
+  color: #ffffff;
+  background-color: #6ac045;
 }
 
 .search-terms-heading{
@@ -151,6 +160,16 @@ h1,h2,h3{
   background: #282828;
   width: 100%;
 }
+.main-search-fields{
+  display: inline-block;
+}
+
+.main-search-button{
+  margin-left: 20px;
+  margin-top: 41px;
+  display: inline-block;
+  vertical-align: top;
+}
 
 .search-select-containers{
   width: 130px;
@@ -163,36 +182,14 @@ h1,h2,h3{
 }
 .search-select-containers p{
   @extend .search-terms-heading;
-  font-size: .9em;
+  font-size: .8em;
 }
 .search-select-containers select{
+  background-color: #282828;
+  border: 0;
+  height: 40px;
   margin: 0px;
   padding-left: 10px;
   width: 120px;
   color: #a2a2a2;
-  background-color: #282828;
-  border: 0;
-  height: 40px;
 }
-
-.main-search-fields{
-  display: inline-block;
-}
-
-.main-search-button{
-  display: inline-block;
-  margin-left: 20px;
-  margin-top: 41px;
-  vertical-align: top;
-}
-
-#temp{
-  color: #ffffff;
-  background-color: #6ac045;
-  font-weight: bold;
-  font-size: 16px;
-  height: 36px;
-  background-image: none;
-  border-radius: 0px;
-}
-
