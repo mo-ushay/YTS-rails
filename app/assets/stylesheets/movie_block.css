@@ -1,0 +1,13 @@
+.movie_block{
+  height: 350px;
+  width: 250px;
+}
+.movie-title{
+  margin-top: 8px;
+  margin-bottom: 0px;
+  color: beige;
+}
+.movie-release-date{
+  margin-top: 0px;
+  color: azure;
+}

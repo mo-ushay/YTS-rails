@@ -5,13 +5,13 @@
       %form.form-inline
         %input.form-control.rounded-12{:placeholder => 'Quick search'}
     %li.nav-item
-      %a.nav-link{:href => '#', :style => "color: #919191"} Home
+      = link_to "Home", "/", {class: 'nav-link', color: '#919191'}
     %li.nav-item
-      %a.nav-link{:href => '#', :style => "color: #6AC045"} 4k
+      = link_to "4k", "/movies?quality=4K", {class: 'nav-link', color: '#6AC045'}
     %li.nav-item
-      %a.nav-link{:href => '#', :style => "color: #919191"} Trending
+      = link_to "Trending", "/movies?order='count(likes.likeable_id) DESC'", {class: 'nav-link', color: '#919191'}
     %li.nav-item
-      %a.nav-link{:href => '#', :style => "color: #919191"} Browse Movies
+      = link_to "Browse Movies", "/movies", {class: 'nav-link', color: '#919191'}
   - if current_user
     %li.nav-item
     = link_to('Logout', destroy_user_session_path, :method => 'delete', :class=>"nav-link")

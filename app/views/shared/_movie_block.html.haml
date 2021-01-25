@@ -5,7 +5,7 @@
   %div
     = image_tag  "cover.jpg", :class => 'movie_block'
   %div
-    %p{style: 'color: #fff'}
+    %p.movie-title
       = link_to "#{movie.name}", movie_path(movie)
-    %p{style: 'color: #919191'}
+    %p.movie-release-date
       = movie.release_date
