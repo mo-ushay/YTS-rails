@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_191320) do
+ActiveRecord::Schema.define(version: 2021_01_25_111010) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -77,19 +77,6 @@ ActiveRecord::Schema.define(version: 2021_01_21_191320) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
   end
 
-  create_table "languages", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "languages_movies", id: false, force: :cascade do |t|
-    t.integer "movie_id", null: false
-    t.integer "language_id", null: false
-    t.index ["language_id", "movie_id"], name: "index_languages_movies_on_language_id_and_movie_id"
-    t.index ["movie_id", "language_id"], name: "index_languages_movies_on_movie_id_and_language_id"
-  end
-
   create_table "likes", force: :cascade do |t|
     t.string "likeable_type"
     t.integer "likeable_id"
@@ -120,6 +107,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_191320) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.string "languages"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
