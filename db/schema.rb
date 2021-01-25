@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_111010) do
+ActiveRecord::Schema.define(version: 2021_01_25_112641) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -55,19 +55,6 @@ ActiveRecord::Schema.define(version: 2021_01_25_111010) do
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
-  create_table "genres", force: :cascade do |t|
-    t.string "category"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "genres_movies", id: false, force: :cascade do |t|
-    t.integer "movie_id", null: false
-    t.integer "genre_id", null: false
-    t.index ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id"
-    t.index ["movie_id", "genre_id"], name: "index_genres_movies_on_movie_id_and_genre_id"
-  end
-
   create_table "images", force: :cascade do |t|
     t.string "image_path"
     t.datetime "created_at", precision: 6, null: false
@@ -108,14 +95,9 @@ ActiveRecord::Schema.define(version: 2021_01_25_111010) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.string "languages"
+    t.string "genres"
+    t.string "video_quality"
     t.index ["user_id"], name: "index_movies_on_user_id"
-  end
-
-  create_table "movies_video_qualities", id: false, force: :cascade do |t|
-    t.integer "movie_id", null: false
-    t.integer "video_quality_id", null: false
-    t.index ["movie_id", "video_quality_id"], name: "index_movies_video_qualities_on_movie_id_and_video_quality_id"
-    t.index ["video_quality_id", "movie_id"], name: "index_movies_video_qualities_on_video_quality_id_and_movie_id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -143,12 +125,6 @@ ActiveRecord::Schema.define(version: 2021_01_25_111010) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "video_qualities", force: :cascade do |t|
-    t.string "resolution"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "feedbacks", "movies"
