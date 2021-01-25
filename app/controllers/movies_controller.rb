@@ -6,6 +6,15 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
     @movies = Movie.all
+    searching_year = params[:release_year][0] unless params[:release_year].nil?
+    genre = params[:genre][0] unless params[:genre].nil?
+    language = params[:language][0] unless params[:language].nil?
+    quality = params[:quality][0] unless params[:quality].nil?
+    rating = params[:rating_bound][0] unless params[:rating_bound].nil?
+    order_by = params[:orders_filter][0] unless params[:orders_filter].nil?
+    @movies = Movie.search_title(params[:title]).search_language(language).search_year(searching_year).search_video_quality(quality).search_genre(
+      genre
+    ).search_rating(rating).order_on_filter(order_by)
   end
 
   # GET /movies/1
@@ -18,7 +27,6 @@ class MoviesController < ApplicationController
     ).find params[:id]
     @reviews = @movie.feedback.select { |item| item.type == 'Review' }
     @comments = @movie.feedback.select { |item| item.type == 'Comment' }
-    #@genres = Genre.all
     @directors = @movie.movie_roles.select { |role| role.role_played == 'director' }
     @actors = @movie.movie_roles.select { |role| role.role_played == 'actor' }
   end
