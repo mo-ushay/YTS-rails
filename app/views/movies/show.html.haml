@@ -1,7 +1,3 @@
-//%p#notice= notice
-//= link_to 'Edit', edit_movie_path(@movie)
-//\|
-//= link_to 'Back', movies_path
 .container-fluid.individual-page-container
   .container.individual-movie-details
     .row
@@ -14,10 +10,12 @@
           %h2.individual-movie-info
             = @movie.release_date
           %h2.individual-movie-info
-            = @genres
+            - @movie.genres.split('/').each do |genre|
+              =genre
           %h2.individual-movie-info
-            <i> Available in: </i>
-            = '4K'
+            Avaliable in
+            - @movie.video_quality.split('/').each do |video_qualities|
+              =video_qualities
           %h2.individual-movie-info
             = @movie.total_likes
           %h2.individual-movie-info
@@ -44,13 +42,13 @@
             Director
           - @directors.each do |director|
             .individual-movie-creation-time
-              = image_tag  "pic.jpg", class: "individual-movie-staff"
+              = image_tag  "cover.jpg", class: "individual-movie-staff"
               = director.actor.name
         %h3
           Cast
         - @actors.each do |actor|     
           .individual-movie-creation-time    
-            = image_tag  "pic.jpg", class: "individual-movie-staff"
+            = image_tag  "cover.jpg", class: "individual-movie-staff"
             ="#{actor.actor.name} as #{actor.acting_as}"
   .container.individual-movie-feedback
     .row

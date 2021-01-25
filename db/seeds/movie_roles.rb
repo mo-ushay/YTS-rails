@@ -13,7 +13,7 @@ actors = {
   ushay: Actor.find_by_name('Ushay'),
   jason_statham: Actor.find_by_name('Jason_Statham'),
   gal_gaddot: Actor.find_by_name('Gal_Gaddot'),
-  liam_neeson: Actor.find_by_name('Liam_Neeson'),
+  liam_neeson: Actor.find_by_name('Liam_Neeson')
 }
 
 MovieRole.where(

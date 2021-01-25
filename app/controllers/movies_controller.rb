@@ -14,13 +14,11 @@ class MoviesController < ApplicationController
     @movie = Movie.includes(
       :created_by, movie_roles: [:actor], feedback: [:user]
     ).left_outer_joins(:likes, :ratings).select(
-      'movies.*, CAST(AVG(ratings.value) AS DECIMAL(10,2)) AS rating,count(likes.likeable_id) as total_likes'
+      'movies.*, CAST(AVG(ratings.value) AS DECIMAL(10,1)) AS rating, count(likes.likeable_id) * 6 as total_likes'
     ).find params[:id]
     @reviews = @movie.feedback.select { |item| item.type == 'Review' }
     @comments = @movie.feedback.select { |item| item.type == 'Comment' }
-    @genres = Genre.all
-    comment_ids = @comments.map(&:id)
-    @total_likes_on_comments = Comment.where_by_ids(comment_ids).calc_total_likes
+    #@genres = Genre.all
     @directors = @movie.movie_roles.select { |role| role.role_played == 'director' }
     @actors = @movie.movie_roles.select { |role| role.role_played == 'actor' }
   end
