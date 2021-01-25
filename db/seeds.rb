@@ -9,12 +9,6 @@
 puts 'Seeding your user accounts!!'
 load "#{Rails.root}/db/seeds/users.rb"
 
-puts 'Seeding your genre info!!'
-load "#{Rails.root}/db/seeds/genres.rb"
-
-puts 'Seeding your video qualities!!'
-load "#{Rails.root}/db/seeds/video_qualities.rb"
-
 puts 'Seeding your actors!!'
 load "#{Rails.root}/db/seeds/actors.rb"
 
@@ -32,8 +26,5 @@ load "#{Rails.root}/db/seeds/comments.rb"
 
 puts 'Seeding your reviews!!'
 load "#{Rails.root}/db/seeds/reviews.rb"
-
-puts 'Seeding your Languages!!'
-load "#{Rails.root}/db/seeds/languages.rb"
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
