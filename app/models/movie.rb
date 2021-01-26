@@ -11,6 +11,7 @@ class Movie < ApplicationRecord
   belongs_to :created_by, class_name: :User, inverse_of: 'movies_created', foreign_key: 'user_id'
 
   has_one :profile_photo, class_name: :Image, as: :imageable
+  accepts_nested_attributes_for :profile_photo, allow_destroy: true
 
   validates :name, presence: true
   validates :synopsis, presence: true

@@ -14,14 +14,14 @@ class MoviesController < ApplicationController
     order_by = params[:orders_filter][0] unless params[:orders_filter].nil?
     @movies = Movie.search_title(params[:title]).search_language(language).search_year(searching_year).search_video_quality(quality).search_genre(
       genre
-    ).search_rating(rating).order_on_filter(order_by)
+    ).search_rating(rating).order_on_filter(order_by).includes(:profile_photo)
   end
 
   # GET /movies/1
   # GET /movies/1.json
   def show
     @movie = Movie.includes(
-      :created_by, movie_roles: [:actor], feedback: [:user]
+      :profile_photo, :created_by, movie_roles: [:actor], feedback: [:user] 
     ).left_outer_joins(:likes, :ratings).select(
       'movies.*, CAST(AVG(ratings.value) AS DECIMAL(10,1)) AS rating, count(likes.likeable_id) * 6 as total_likes'
     ).find params[:id]
@@ -34,6 +34,7 @@ class MoviesController < ApplicationController
   # GET /movies/new
   def new
     @movie = Movie.new
+    @movie.build_profile_photo
   end
 
   # GET /movies/1/edit
@@ -47,9 +48,12 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    @movie = Movie.new(movie_params)
+    parameters = movie_params
+    parameters[:genres] = [parameters[:video_quality]]
+    @movie = Movie.new(parameters) 
+    @movie.created_by = current_user
+    #@movie = Movie.new(movie_params)
 
-    respond_to do |format|
       if @movie.save
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
@@ -58,7 +62,6 @@ class MoviesController < ApplicationController
         format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
-  end
 
   # PATCH/PUT /movies/1
   # PATCH/PUT /movies/1.json
@@ -92,6 +95,7 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.fetch(:movie, {})
+      params.fetch(:movie, {}).permit(:name, :release_date, :video_quality, :synopsis, :genres, :language)
+      params.fetch(:movie, {}).permit(:name, :release_date, :video_quality, :synopsis, :genres, :language, profile_photo_attributes: [:path])     
     end
 end
