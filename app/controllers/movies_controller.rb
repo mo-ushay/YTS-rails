@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [ :edit, :update, :destroy ]
-  rescue_from ActiveRecord::RecordNotFound, with: :Error_404
+  rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
   # GET /movies
   # GET /movies.json
@@ -41,8 +41,8 @@ class MoviesController < ApplicationController
   def edit
   end
 
-  def Error_404
-    render template: 'errors/get_404', status: '404'
+  def render_404
+    raise ActionController::RoutingError.new('Not Found')
   end
 
   # POST /movies
@@ -51,16 +51,13 @@ class MoviesController < ApplicationController
     parameters = movie_params
     parameters[:genres] = [parameters[:video_quality]]
     @movie = Movie.new(parameters) 
-    #@movie.created_by = current_user
-    #@movie = Movie.new(movie_params)
+    @movie.created_by = current_user
 
-      if @movie.save
-        redirect_to @movie, notice: 'Movie was successfully created.'
-        #format.json { render :show, status: :created, location: @movie }
-      else
-        render :new, notice: 'Not Saved!'
-       # format.json { render json: @movie.errors, status: :unprocessable_entity }
-      end
+    if @movie.save
+      redirect_to @movie, notice: 'Movie was successfully created.'
+    else
+      render :new, notice: 'Not Saved!'
+    end
  end
 
   # PATCH/PUT /movies/1
@@ -88,14 +85,14 @@ class MoviesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movie
-      @movie = Movie.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def movie_params
-      params.fetch(:movie, {}).permit(:name, :release_date, :video_quality, :synopsis, :genres, :language)
-      params.fetch(:movie, {}).permit(:name, :release_date, :video_quality, :synopsis, :genres, :language, profile_photo_attributes: [:path])     
-    end
+  # Only allow a list of trusted parameters through.
+  def movie_params
+    params.fetch(:movie, {}).permit(:name, :release_date, :video_quality, :synopsis, :genres, :language)
+    params.fetch(:movie, {}).permit(:name, :release_date, :video_quality, :synopsis, :genres, :language, profile_photo_attributes: [:path])     
+  end
 end
