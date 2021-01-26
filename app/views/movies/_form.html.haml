@@ -1,40 +1,40 @@
 .container
-  = form_with model: @movie,local: true do |movie_form|
+  = form_with model: @movie,local: true do |add_movie|
     .form-group
-      = movie_form.label :name, 'Movie Title'
+      = add_movie.label :name, 'Movie Title'
       - @movie.errors.full_messages_for(:name).each do |message|
         .text-danger
           = message
-      = movie_form.text_field :name, class: 'form-control'
+      = add_movie.text_field :name, class: 'form-control'
     .form-group
-      = movie_form.label :synopsis, 'Synopsis'
+      = add_movie.label :synopsis, 'Synopsis'
       - @movie.errors.full_messages_for(:synopsis).each do |message|
         .text-danger
           = message
-      = movie_form.text_area :synopsis, size: "40x05", class: 'form-control'
+      = add_movie.text_area :synopsis, size: "40x05", class: 'form-control'
       .form-group
-      = movie_form.label :release_date, 'Release Date'
+      = add_movie.label :release_date, 'Release Date'
       - @movie.errors.full_messages_for(:release_date).each do |message|
         .text-danger
           = message
-      = movie_form.date_select :release_date, class: 'form-control'
+      = add_movie.date_field :release_date, class: 'form-control'
     .form-group
-      = movie_form.label :languages, 'Language'
+      = add_movie.label :languages, 'Language'
       - @movie.errors.full_messages_for(:languages).each do |message|
         .text-danger
           = message
-      = movie_form.select :languages, ["English", "French", "Urdu"], selected: "English", class: 'form-control'
+      = add_movie.select :languages, ["English", "French", "Urdu"], selected: "English", class: 'form-control'
     .form-group
-      = movie_form.label :video_quality, 'Video Quality'
+      = add_movie.label :video_quality, 'Video Quality'
       - @movie.errors.full_messages_for(:video_quality).each do |message|
         .text-danger
           = message
-      = movie_form.select :video_quality, ["4K","720p","1080p","480p"], selected: "4K", class: 'form-control'
+      = add_movie.select :video_quality, ["4K","720p","1080p","480p"], selected: "4K", class: 'form-control'
     .form-group
-      = movie_form.label :genres, 'Genre'
+      = add_movie.label :genres, 'Genre'
       - @movie.errors.full_messages_for(:genres).each do |message|
         .text-danger
           = message
-      = movie_form.select :genres, ["Thriller", "Adventure", "Comedy", "Action", "Fantacy"], selected: "Action", class: 'form-control'
+      = add_movie.select :genres, ["Thriller", "Adventure", "Comedy", "Action", "Fantacy"], selected: "Action", class: 'form-control'
       .actions
-        = movie_form.submit 'Submit', class: 'btn btn-primary'
+        = add_movie.submit 'Submit', class: 'btn btn-primary'
