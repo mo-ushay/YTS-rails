@@ -28,7 +28,7 @@
         .search-select-containers.search-select-container-last
           %p
             Order by:
-          =select 'order_by',"",  { Latest: "release_date Desc", Downloads: "downloads DESC", Alphabatical: "name",Oldest: "release_date",Year: "YEAR(release_date) Desc", Featured: "is_featured Desc",Rating: "AVG(ratings.value) Desc",Likes: "count(likes.likeable_id) Desc"}
+          =select 'order_by',"",  { Latest: "release_date Desc", Downloads: "downloads DESC", Alphabatical: "name DESC",Oldest: "release_date",Year: "YEAR(release_date) Desc", Featured: "is_featured Desc",Rating: "AVG(ratings.value) Desc",Likes: "count(likes.likeable_id) Desc"}
       .main-search-button
         %input{type: "submit", value: "Search", id: "temp"}
 .container-fluid.individual-movies-result-container
