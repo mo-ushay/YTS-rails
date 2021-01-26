@@ -1,10 +1,40 @@
-= form_for @movie do |f|
-  - if @movie.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@movie.errors.count, "error")} prohibited this movie from being saved:"
-      %ul
-        - @movie.errors.full_messages.each do |message|
-          %li= message
-
-  .actions
-    = f.submit 'Save'
+.container
+  = form_with model: @movie,local: true do |movie_form|
+    .form-group
+      = movie_form.label :name, 'Movie Title'
+      - @movie.errors.full_messages_for(:name).each do |message|
+        .text-danger
+          = message
+      = movie_form.text_field :name, class: 'form-control'
+    .form-group
+      = movie_form.label :synopsis, 'Synopsis'
+      - @movie.errors.full_messages_for(:synopsis).each do |message|
+        .text-danger
+          = message
+      = movie_form.text_area :synopsis, size: "40x05", class: 'form-control'
+      .form-group
+      = movie_form.label :release_date, 'Release Date'
+      - @movie.errors.full_messages_for(:release_date).each do |message|
+        .text-danger
+          = message
+      = movie_form.date_select :release_date, class: 'form-control'
+    .form-group
+      = movie_form.label :languages, 'Language'
+      - @movie.errors.full_messages_for(:languages).each do |message|
+        .text-danger
+          = message
+      = movie_form.select :languages, ["English", "French", "Urdu"], selected: "English", class: 'form-control'
+    .form-group
+      = movie_form.label :video_quality, 'Video Quality'
+      - @movie.errors.full_messages_for(:video_quality).each do |message|
+        .text-danger
+          = message
+      = movie_form.select :video_quality, ["4K","720p","1080p","480p"], selected: "4K", class: 'form-control'
+    .form-group
+      = movie_form.label :genres, 'Genre'
+      - @movie.errors.full_messages_for(:genres).each do |message|
+        .text-danger
+          = message
+      = movie_form.select :genres, ["Thriller", "Adventure", "Comedy", "Action", "Fantacy"], selected: "Action", class: 'form-control'
+      .actions
+        = movie_form.submit 'Submit', class: 'btn btn-primary'

@@ -51,17 +51,17 @@ class MoviesController < ApplicationController
     parameters = movie_params
     parameters[:genres] = [parameters[:video_quality]]
     @movie = Movie.new(parameters) 
-    @movie.created_by = current_user
+    #@movie.created_by = current_user
     #@movie = Movie.new(movie_params)
 
       if @movie.save
-        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
+        redirect_to @movie, notice: 'Movie was successfully created.'
+        #format.json { render :show, status: :created, location: @movie }
       else
-        format.html { render :new }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+        render :new, notice: 'Not Saved!'
+       # format.json { render json: @movie.errors, status: :unprocessable_entity }
       end
-    end
+ end
 
   # PATCH/PUT /movies/1
   # PATCH/PUT /movies/1.json
