@@ -5,7 +5,6 @@ class Movie < ApplicationRecord
   has_many :user, through: :feedback
   has_many :ratings
   has_many :user_rating, through: :ratings, class_name: :User
-  #has_many :linked_images, class_name: :Image, as: :imageable
   has_many :likes, class_name: :Like, as: :likeable
 
   belongs_to :created_by, class_name: :User, inverse_of: 'movies_created', foreign_key: 'user_id'
@@ -16,6 +15,10 @@ class Movie < ApplicationRecord
   validates :name, presence: true
   validates :synopsis, presence: true
   validates :release_date, presence: true
+
+  serialize :genres
+  serialize :video_quality
+  serialize :languages
 
   #scope :total_downloads, -> { order(downloads: :desc) }
   #scope :recent_releases, -> { order(release_date: :desc) }

@@ -34,5 +34,5 @@
 .container-fluid.individual-movies-result-container
   .container
     %h2{style: 'text-align:center'}
-      ="#{@movies.length} YIFY Movies found"
+      ="#{@movies.length} Movies found"
     =render partial: "shared/movie_row", locals: {movies: @movies}
