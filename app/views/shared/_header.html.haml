@@ -5,20 +5,20 @@
       %form.form-inline
         %input.form-control.rounded-12{:placeholder => 'Quick search'}
     %li.nav-item
-      = link_to 'Home', "/",  style: 'color:#919191;', class: 'nav-link' 
+      = link_to 'Home', "/",  style: 'color:#EFEBEA;', class: 'nav-link' 
     %li.nav-item
-      = link_to '4k', "/movies?quality=4K", style: 'color:#6AC045;', class: 'nav-link'
+      = link_to '4K', "/movies?quality=4K", style: 'color:#6AC045;', class: 'nav-link'
     %li.nav-item
-      = link_to 'Trending', "/movies?order='count(likes.likeable_id) DESC'", style: 'color:#919191;', class: 'nav-link' 
+      = link_to 'Trending', "/movies?order='count(likes.likeable_id) DESC'", style: 'color:#EFEBEA;', class: 'nav-link' 
     %li.nav-item
-      = link_to 'Browse Movies', "/movies", style: 'color:#919191;', class: 'nav-link' 
+      = link_to 'Browse Movies', "/movies", style: 'color:#EFEBEA;', class: 'nav-link' 
   - if current_user
     %li.nav-item
-    = link_to('Logout', destroy_user_session_path, :method => 'delete', :class=>"nav-link")
+    = link_to('Logout', destroy_user_session_path, :method => 'delete', :class=>"nav-link", style: 'color:#EFEBEA;')
     %li.nav-item
     = link_to 'Add New Movies', '/movies/new', style: 'color:#6AC045;', class: 'nav-link'
   - else
     %li.nav-item
-    = link_to 'Login', "/users/sign_in", style: 'color:#919191;', class: 'nav-link'
+    = link_to 'Login', "/users/sign_in", style: 'color:#EFEBEA;', class: 'nav-link'
     %li.nav-item
-    = link_to 'Register', "/users/sign_up", style: 'color:#919191;', class: 'nav-link'
+    = link_to 'Register', "/users/sign_up", style: 'color:#EFEBEA;', class: 'nav-link'

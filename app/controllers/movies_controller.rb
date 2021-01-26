@@ -42,14 +42,13 @@ class MoviesController < ApplicationController
   end
 
   def render_404
-    raise ActionController::RoutingError.new('Not Found')
+    render file: "#{Rails.root}/public/404", status: :not_found
   end
 
   # POST /movies
   # POST /movies.json
   def create
     parameters = movie_params
-    parameters[:genres] = [parameters[:video_quality]]
     @movie = Movie.new(parameters) 
     @movie.created_by = current_user
 
