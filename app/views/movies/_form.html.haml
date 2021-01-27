@@ -36,5 +36,8 @@
         .text-danger
           = message
       = add_movie.select :genres, ["Thriller", "Adventure", "Comedy", "Action", "Fantacy"], selected: "Action", class: 'form-control'
-      .actions
-        = add_movie.submit 'Submit', class: 'btn btn-primary'
+    = add_movie.fields_for :profile_photo do |profile_image|
+      = profile_image.label :path, 'Movie Banner'
+      = profile_image.file_field :path
+    .actions
+      = add_movie.submit 'Submit', class: 'btn btn-primary'

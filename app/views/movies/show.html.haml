@@ -1,8 +1,11 @@
 .container-fluid.individual-page-container
   .container.individual-movie-details
     .row
-      .col-lg-3
+
+      - if @movie.profile_photo.nil? 
         = image_tag  "cover.jpg", class: "individual-movie-cover"
+      - else
+        = image_tag @movie.profile_photo.path.url, class: "individual-movie-cover"
       .col-lg-6
         .individual-movie-container
           %h1.individual-movie-title

@@ -1,9 +1,9 @@
-- content_for :head do
-  %link{:rel => 'stylesheet',:href => '/assets/movie_block.css'}
-
 %div
   %div
-    = image_tag  "cover.jpg", :class => 'movie_block'
+    - if movie.profile_photo.nil? 
+      = image_tag  "cover.jpg", class: "individual-movie-cover"
+    - else
+      = image_tag movie.profile_photo.path.url, class: "individual-movie-cover"
   %div
     %p.movie-title
       = link_to "#{movie.name}", movie_path(movie)

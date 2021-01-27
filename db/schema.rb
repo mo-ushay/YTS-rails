@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_112641) do
+ActiveRecord::Schema.define(version: 2021_01_26_174400) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_112641) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "imageable_type"
     t.integer "imageable_id"
+    t.string "path"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
   end
 
