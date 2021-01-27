@@ -20,8 +20,8 @@ class Movie < ApplicationRecord
   serialize :video_quality
   serialize :languages
 
-  #scope :total_downloads, -> { order(downloads: :desc) }
-  #scope :recent_releases, -> { order(release_date: :desc) }
+  scope :total_downloads, -> { order(downloads: :desc) }
+  scope :recent_releases, -> { order(release_date: :desc) }
   scope :search_rating, ->(rating_bound) { left_outer_joins(:ratings).group('id').having('AVG(ratings.value) > ?', rating_bound) unless rating_bound.nil? || rating_bound.empty?}
   scope :order_on_filter, ->(orders_filter) { left_outer_joins(:ratings, :likes).group('id').order(orders_filter) unless orders_filter.nil? || orders_filter.empty?}
   scope :search_language, ->(language) { where(languages: language) unless language.nil? || language.empty? }
