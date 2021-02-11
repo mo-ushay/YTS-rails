@@ -4,7 +4,7 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :movies, resolver: Queries::RetrieveMovie, description: "1 Movie"
-    field :movies, resolver: Queries::RetrieveMovies, description: "All Movie"
+    field :movie, resolver: Queries::RetrieveMovie, description: "1 Movie"
+    field :movies, resolver: Queries::RetrieveMovies, description: "All Movies"
   end
 end
