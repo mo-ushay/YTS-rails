@@ -72,3 +72,4 @@ gem 'rmagick'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'yaml_db'
 gem 'graphiql-rails', group: :development
+gem 'graphiql-rails', group: :development
