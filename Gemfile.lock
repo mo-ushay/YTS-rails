@@ -304,6 +304,10 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    vue_cli-rails (0.5.0)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6)
+      railties (>= 4.2)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -361,6 +365,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
+  vue_cli-rails
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)

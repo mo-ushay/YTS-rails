@@ -6,5 +6,6 @@ module Types
 
     field :movie, resolver: Queries::RetrieveMovie, description: "1 Movie"
     field :movies, resolver: Queries::RetrieveMovies, description: "All Movies"
+    field :user, resolver: Queries::RetrieveUser, description: "A user" 
   end
 end

@@ -68,6 +68,7 @@ gem 'devise'
 gem 'graphql_rails'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'vue_cli-rails'
 gem 'rmagick'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'yaml_db'

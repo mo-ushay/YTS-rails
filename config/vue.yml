@@ -1,0 +1,40 @@
+default: &default
+  package_manager: npm
+
+  # entry_path: app/assets/vue/entry_points
+  # # Migrate from Webpacker:
+  # entry_path: app/javascript/packs
+
+  public_output_path: vue_assets
+  # # Migrate from Webpacker:
+  # public_output_path: packs
+
+  # js_output:
+  #   filename: 'js/[name].[hash:8].js'
+  #   chunkFilename: 'js/[name].[hash:8].js'
+  alias:
+    '@': app/assets/vue
+    # '~': app/assets/vue/components
+
+development:
+  <<: *default
+  # manifest_output: tmp/manifest.json
+  devServer:
+    contentBase: public
+    host: localhost
+    port: 3080
+    compress: true
+
+production:
+  <<: *default
+  manifest_output: app/assets/vue/manifest.json
+  # Webpacker manifest_output (public/packs/manifest.json) is not suggested
+  productionSourceMap: false
+  css:
+    extract: true
+  modern: true
+
+test:
+  <<: *default
+  # launch_dev_service: vue-cli-service serve
+  # filenameHashing: false
