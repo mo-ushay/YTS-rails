@@ -2,30 +2,19 @@ class YtsRailsSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
-  # Union and Interface Resolution
-  def self.resolve_type(abstract_type, obj, ctx)
-    # TODO: Implement this function
-    # to return the correct object type for `obj`
-    raise(GraphQL::RequiredImplementationMissingError)
+  def self.id_from_object(object, type_definition, _query_ctx)
+    GraphQL::Schema::UniqueWithinType.encode(type_definition.graphql_name, object.id)
   end
 
-  # Relay-style Object Identification:
-
-  # Return a string UUID for `object`
-  def self.id_from_object(object, type_definition, query_ctx)
-    # Here's a simple implementation which:
-    # - joins the type name & object.id
-    # - encodes it with base64:
-    # GraphQL::Schema::UniqueWithinType.encode(type_definition.name, object.id)
+  def self.object_from_id(id, _query_ctx)
+    class_name, item_id = MyApp::GlobalId.decrypt(id)
+    # "Post" => Post.find(item_id)
+    Object.const_get(class_name).find(item_id)
   end
 
-  # Given a string UUID, find the object
-  def self.object_from_id(id, query_ctx)
-    # For example, to decode the UUIDs generated above:
-    # type_name, item_id = GraphQL::Schema::UniqueWithinType.decode(id)
-    #
-    # Then, based on `type_name` and `id`
-    # find an object in your application
-    # ...
+  def self.resolve_type(_type, obj, _ctx)
+    "Types::#{obj.class.name}Type".constantize
+  rescue NameError
+    raise("Unexpected object: #{obj}")
   end
 end
