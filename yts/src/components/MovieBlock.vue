@@ -2,10 +2,10 @@
   <div class="d-flex flex-column">
     <div>
       <v-img
-        lazy-src="https://i.picsum.photos/id/1074/5472/3648.jpg?hmac=w-Fbv9bl0KpEUgZugbsiGk3Y2-LGAuiLZOYsRk0zo4A"
+        lazy-src="https://ca.slack-edge.com/T3WCCF3L2-U4T4YCFAM-5981b7f7f686-512"
         height="315"
         width="210"
-        src="https://i.picsum.photos/id/1074/5472/3648.jpg?hmac=w-Fbv9bl0KpEUgZugbsiGk3Y2-LGAuiLZOYsRk0zo4A"
+        src="https://ca.slack-edge.com/T3WCCF3L2-U4T4YCFAM-5981b7f7f686-512"
       />
     </div>
     <div class="text-left">

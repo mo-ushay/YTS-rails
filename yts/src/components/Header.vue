@@ -8,7 +8,7 @@
     <v-sapcer />
 
     <v-btn
-    href="https://sendoso.com"
+    href="http://localhost:3000/"
     target="_blank"
     text
     >
