@@ -5,14 +5,16 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
-    searching_year = params[:release_year][0] unless params[:release_year].nil?
+    year = params[:year].split('-') unless params[:year].nil?
+    starting_year = year[0] unless year.nil? || year.empty?
+    ending_year = year[year.length - 1] unless year.nil? || year.empty?
+    #searching_year = params[:release_year][0] unless params[:release_year].nil?
     genre = params[:genre][0] unless params[:genre].nil?
     language = params[:language][0] unless params[:language].nil?
     quality = params[:quality][0] unless params[:quality].nil?
     rating = params[:rating_bound][0] unless params[:rating_bound].nil?
     order_by = params[:orders_filter][0] unless params[:orders_filter].nil?
-    @movies = Movie.search_title(params[:title]).search_language(language).search_year(searching_year).search_video_quality(quality).search_genre(
+    @movies = Movie.search_title(params[:title]).search_language(language).search_on_starting_year(starting_year).search_on_ending_year(ending_year).search_video_quality(quality).search_genre(
       genre
     ).search_rating(rating).order_on_filter(order_by).includes(:profile_photo)
   end

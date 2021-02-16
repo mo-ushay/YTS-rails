@@ -357,6 +357,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.1)
   rails_12factor
+  ransack
   rmagick
   rspec-rails
   sass-rails (>= 6)

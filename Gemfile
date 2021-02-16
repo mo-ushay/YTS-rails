@@ -59,6 +59,8 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'graphiql-rails', group: :development
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'activeadmin'
 gem 'bootstrap'
@@ -68,9 +70,8 @@ gem 'devise'
 gem 'graphql_rails'
 gem 'haml-rails'
 gem 'jquery-rails'
-gem 'vue_cli-rails'
+gem 'ransack'
 gem 'rmagick'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'vue_cli-rails'
 gem 'yaml_db'
-gem 'graphiql-rails', group: :development
-gem 'graphiql-rails', group: :development
