@@ -1,9 +1,9 @@
 module Types
   class MutationType < Types::BaseObject
-    
-    field :add_movie, mutation: Mutations::AddMovie, description: 'A movie'
-    field :update_movie, mutation: Mutations::UpdateMovie, description: 'Update a movie'
-    field :login, mutation: Mutations::Login, description: 'Login'
+
+    field :add_movie, mutation: Mutations::Movies::AddMovie, description: 'A movie'
+    field :update_movie, mutation: Mutations::Movies::UpdateMovie, description: 'Update a movie'
+    field :user_login, mutation: Mutations::Login::UserLogin, description: 'Login'
 
   end
 end

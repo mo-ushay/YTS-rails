@@ -28,7 +28,6 @@ class Movie < ApplicationRecord
   scope :order_on_filter, ->(orders_filter) { left_outer_joins(:ratings, :likes).group('id').order(orders_filter) unless orders_filter.nil? || orders_filter.empty?}
   scope :search_language, ->(language) { where(languages: language) unless language.nil? || language.empty? }
   scope :search_genre, ->(genre) { where('genres LIKE ?', "%#{genre}%") unless genre.nil? || genre.empty? }
-  #scope :search_year, ->(release_year) { where('YEAR(release_date) == ?') unless release_year.nil? || release_year.empty?}
   scope :search_video_quality, ->(video_quality) { where('video_quality LIKE ?', "%#{video_quality}%") unless video_quality.nil? || video_quality.empty?}
   scope :search_title, ->(title) { where('name LIKE ?', "%#{title}%") unless title.nil? || title.empty? }
 

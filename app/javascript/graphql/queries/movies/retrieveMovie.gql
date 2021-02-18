@@ -1,0 +1,6 @@
+query GET_MOVIE {
+  movie{
+    name
+    release_date
+  }
+}

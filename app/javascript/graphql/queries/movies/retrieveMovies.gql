@@ -1,0 +1,6 @@
+query GET_MOVIES {
+  movies{
+    name
+    release_date
+  }
+}

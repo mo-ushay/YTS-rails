@@ -1,5 +1,6 @@
 require_relative "boot"
 require "sprockets/railtie"
+#config.autoload_paths << Rails.root.join('interactors')
 
 require "rails/all"
 

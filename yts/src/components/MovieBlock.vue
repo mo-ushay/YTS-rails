@@ -2,11 +2,12 @@
   <div class="d-flex flex-column">
     <div>
       <v-img
-        lazy-src="https://ca.slack-edge.com/T3WCCF3L2-U4T4YCFAM-5981b7f7f686-512"
+        lazy-src="https://i.redd.it/fddzip7onof31.jpg"
         height="315"
         width="210"
-        src="https://ca.slack-edge.com/T3WCCF3L2-U4T4YCFAM-5981b7f7f686-512"
+        src="https://i.redd.it/fddzip7onof31.jpg"
       />
+      {{ movies }}
     </div>
     <div class="text-left">
       <p class="movie-title">
@@ -20,9 +21,23 @@
 </template>
 
 <script>
-  export default {
-    name: 'MovieBlock',
+const GET_MOVIES =  require('app/javascript/graphql/queries/movies/retrieveMovies.gql')
+export default {
+  name: 'MovieBlock',
+ apollo: {
+  movies: {
+    query: GET_MOVIES,
+    update: data => {
+      debugger
+    }
   }
+},
+  data () {
+    return {
+      movies: []
+    }
+  }
+}
 </script>
 
 <style scoped>
