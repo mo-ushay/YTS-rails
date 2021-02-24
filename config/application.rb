@@ -1,6 +1,5 @@
 require_relative "boot"
 require "sprockets/railtie"
-#config.autoload_paths << Rails.root.join('interactors')
 
 require "rails/all"
 
@@ -10,6 +9,7 @@ Bundler.require(*Rails.groups)
 
 module YTSRails
   class Application < Rails::Application
+    config.autoload_paths << Rails.root.join('interactors')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 

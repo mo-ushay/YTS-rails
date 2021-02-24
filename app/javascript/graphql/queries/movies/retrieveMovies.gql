@@ -1,6 +1,6 @@
-query GET_MOVIES {
+query {
   movies{
     name
-    release_date
+    release_date 
   }
 }

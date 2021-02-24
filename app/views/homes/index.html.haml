@@ -1,22 +1,23 @@
-//index for Home Page (container for total and Recent movies)
-.container-fluid.homepage-container
-  .intro-container
-    .container
-      .row
-        %h3.intro-wrapper
-          Welcome to YTS-Rails, Dowlnoad HD YIFY Movies!
-.total-downloads-container
-  .container
-    .row
-      %h2.total-downloads-wrapper
-        Popular Downloads
-    =render partial: "shared/movie_row", locals: {movies: @total_downloads}
-.recent-releases-container
-  .container
-    .row
-      %h2.recent-releases-wrapper
-        Recent Releases 
-    =render partial: "shared/movie_row", locals: {movies: @recent_releases}
+#yts
+-# //index for Home Page (container for total and Recent movies)
+-# .container-fluid.homepage-container
+-#   .intro-container
+-#     .container
+-#       .row
+-#         %h3.intro-wrapper
+-#           = javascript_pack_tag 'hello_vue'  
+-# .total-downloads-container
+-#   .container
+-#     .row
+-#       %h2.total-downloads-wrapper
+-#         Popular Downloads
+-#     =render partial: "shared/movie_row", locals: {movies: @total_downloads}
+-# .recent-releases-container
+-#   .container
+-#     .row
+-#       %h2.recent-releases-wrapper
+-#         Recent Releases 
+-#     =render partial: "shared/movie_row", locals: {movies: @recent_releases}
 
 
 

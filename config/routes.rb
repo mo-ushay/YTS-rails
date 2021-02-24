@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
 
   root 'homes#index'
 
-  get '/', to: 'homes#index'
+   get '/', to: 'homes#index'
 
   resources :movies do
     resources :feedbacks, only: [:create, :update, :destroy], shallow: true

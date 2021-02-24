@@ -7,9 +7,9 @@
         width="210"
         src="https://i.redd.it/fddzip7onof31.jpg"
       />
-      {{ movies }}
     </div>
     <div class="text-left">
+      <p> {{movies.name}}</p>
       <p class="movie-title">
         Title
       </p>
@@ -21,22 +21,22 @@
 </template>
 
 <script>
-const GET_MOVIES =  require('app/javascript/graphql/queries/movies/retrieveMovies.gql')
+import  GET_MOVIES  from 'graphql/queries/movies/retrieveMovies.gql'
 export default {
+  data(){
+    return {
+      movies: []
+    }
+  },
   name: 'MovieBlock',
  apollo: {
   movies: {
     query: GET_MOVIES,
-    update: data => {
-      debugger
+    update: (data) => {
+      console.log(data)
     }
   }
-},
-  data () {
-    return {
-      movies: []
-    }
-  }
+}
 }
 </script>
 
