@@ -7,12 +7,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'yts' %>
+    <%= javascript_pack_tag 'yts', 'data-turbolinks-track': 'reload' %>
     <%= yield :head %>
   </head>
 
-  <body>
-  <%# <%=  render 'shared/header' %> 
+  <body> 
+  <%=  render 'shared/header' %>%
   <%= yield %>
   </body>
 </html>

@@ -1,38 +1,39 @@
-.container-fluid.individual-movies-search-container
-  .container.individual-movies-result-wrapper
-    =form_tag(url_for(controller: :movies,action: :index),:method => "get") do |f|
-      .main-search-fields.col-lg-10
-        %p.search-terms-heading
-          Search Terms:
-        =text_field_tag "title","", id: 'search-input-field'
-        .search-select-containers
-          %p
-            Quality:
-          =select 'quality',"",{All: nil,"4K"=>"4K", "1080p"=>"1080p", "720p"=>"720p","480p"=>"480p"}
-        .search-select-containers
-          %p
-            Genres:
-          =select 'genre',"",{All: nil,Adventure: "Adventure",Comedy: "Comedy",Action: "Action", Thriller: "Thriller",Fantacy: "Fantacy"}
-        .search-select-containers
-          %p
-            Rating:
-          =select 'rating',"",{All: nil,"9+"=>9,"8+"=>8,"7+"=>7,"6+"=>6,"5+"=>5,"4+"=>4,"3+"=>3,"2+"=>2,"1+"=>1}
-        .search-select-containers
-          %p
-            Year:
-          =select 'year_of_release',"", {All: nil,"2020"=>"2020","2019"=>"2019","2018"=>"2018","2014-2017"=>"2014-2017"}
-        .search-select-containers
-          %p
-            Language:
-          =select 'language',"", {All: nil,English: "English", French: "French", Urdu: "Urdu"}
-        .search-select-containers.search-select-container-last
-          %p
-            Order by:
-          =select 'order_by',"",  { Latest: "release_date Desc", Downloads: "downloads DESC", Alphabatical: "name", Oldest: "release_date",Year: "YEAR(release_date) Desc", Featured: "is_featured Desc",Rating: "AVG(ratings.value) Desc",Likes: "count(likes.likeable_id) Desc"}
-      .main-search-button
-        %input{type: "submit", value: "Search", id: "temp"}
-.container-fluid.individual-movies-result-container
-  .container
-    %h2{style: 'text-align:center'}
-      ="#{@movies.length} Movies found"
-    =render partial: "shared/movie_row", locals: {movies: @movies}
+#yts
+-# .container-fluid.individual-movies-search-container
+-#   .container.individual-movies-result-wrapper
+-#     =form_tag(url_for(controller: :movies,action: :index),:method => "get") do |f|
+-#       .main-search-fields.col-lg-10
+-#         %p.search-terms-heading
+-#           Search Terms:
+-#         =text_field_tag "title","", id: 'search-input-field'
+-#         .search-select-containers
+-#           %p
+-#             Quality:
+-#           =select 'quality',"",{All: nil,"4K"=>"4K", "1080p"=>"1080p", "720p"=>"720p","480p"=>"480p"}
+-#         .search-select-containers
+-#           %p
+-#             Genres:
+-#           =select 'genre',"",{All: nil,Adventure: "Adventure",Comedy: "Comedy",Action: "Action", Thriller: "Thriller",Fantacy: "Fantacy"}
+-#         .search-select-containers
+-#           %p
+-#             Rating:
+-#           =select 'rating',"",{All: nil,"9+"=>9,"8+"=>8,"7+"=>7,"6+"=>6,"5+"=>5,"4+"=>4,"3+"=>3,"2+"=>2,"1+"=>1}
+-#         .search-select-containers
+-#           %p
+-#             Year:
+-#           =select 'year_of_release',"", {All: nil,"2020"=>"2020","2019"=>"2019","2018"=>"2018","2014-2017"=>"2014-2017"}
+-#         .search-select-containers
+-#           %p
+-#             Language:
+-#           =select 'language',"", {All: nil,English: "English", French: "French", Urdu: "Urdu"}
+-#         .search-select-containers.search-select-container-last
+-#           %p
+-#             Order by:
+-#           =select 'order_by',"",  { Latest: "release_date Desc", Downloads: "downloads DESC", Alphabatical: "name", Oldest: "release_date",Year: "YEAR(release_date) Desc", Featured: "is_featured Desc",Rating: "AVG(ratings.value) Desc",Likes: "count(likes.likeable_id) Desc"}
+-#       .main-search-button
+-#         %input{type: "submit", value: "Search", id: "temp"}
+-# .container-fluid.individual-movies-result-container
+-#   .container
+-#     %h2{style: 'text-align:center'}
+-#       ="#{@movies.length} Movies found"
+-#     =render partial: "shared/movie_row", locals: {movies: @movies}
