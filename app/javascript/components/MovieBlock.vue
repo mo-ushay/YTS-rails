@@ -1,6 +1,7 @@
 <template>
   <div class="d-flex flex-column">
     <div>
+      Ushay
       <v-img
         lazy-src="https://i.redd.it/fddzip7onof31.jpg"
         height="315"
@@ -9,7 +10,7 @@
       />
     </div>
     <div class="text-left">
-      <p> {{movies.name}}</p>
+      <p> Hi There! {{movies.name}}</p>
       <p class="movie-title">
         Title
       </p>
@@ -21,13 +22,8 @@
 </template>
 
 <script>
-import  GET_MOVIES  from 'graphql/queries/movies/retrieveMovies.gql'
+import  GET_MOVIES  from '../graphql/queries/movies/retrieveMovies.gql'
 export default {
-  data(){
-    return {
-      movies: []
-    }
-  },
   name: 'MovieBlock',
  apollo: {
   movies: {
@@ -36,7 +32,12 @@ export default {
       console.log(data)
     }
   }
-}
+},
+  data() {
+    return {
+      movies: []
+    }
+  }
 }
 </script>
 
@@ -46,7 +47,7 @@ export default {
     margin-top: 8px;
     margin-bottom: 0px;
   }
-  .release-date{
+  .release-date{ 
     color: #919191;
     margin-top: 0px;
   }
