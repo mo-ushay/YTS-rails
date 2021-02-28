@@ -1,6 +1,9 @@
-query {
+query retrieveMovies {
   movies{
+    id
     name
-    release_date 
+    releaseDate
+    downloads
+    synopsis
   }
 }
