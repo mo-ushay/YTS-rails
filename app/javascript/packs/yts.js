@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Vue from "vue";
 import MovieRow from "components/MovieRow.vue";
 import { BootstrapVue } from "bootstrap-vue";
@@ -12,6 +13,7 @@ Vue.use(Vuetify);
 
 document.addEventListener("DOMContentLoaded", () => {
   new Vue({
+
     el: "#yts",
     apolloProvider,
     render: (h) => h(MovieRow),

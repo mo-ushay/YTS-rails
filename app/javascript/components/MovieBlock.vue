@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
 import GET_MOVIES from "graphql/queries/movies/retrieveMovies.gql";
 export default {
   name: "MovieBlock",
