@@ -18,11 +18,13 @@
 </template>
 
 <script>
-  import MovieBlock from "@/components/MovieBlock.vue"
-  export default {
-    name: 'MovieRow',
-    components: {
-      MovieBlock
-    } 
-  }
+import MovieBlock from "components/MovieBlock.vue";
+import MovieInfo from "components/MovieInfo.vue";
+export default {
+  name: "MovieRow",
+  components: {
+    MovieBlock,
+    MovieInfo,
+  },
+};
 </script>

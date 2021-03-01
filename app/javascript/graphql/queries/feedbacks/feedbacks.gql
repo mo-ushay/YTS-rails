@@ -1,0 +1,9 @@
+query{
+  feedbacks(movieId, feedbackType){
+    content
+    movie {
+      id
+    }
+    type
+  }
+}

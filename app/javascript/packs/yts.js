@@ -1,22 +1,19 @@
-import Vue from 'vue'
-import MovieBlock from 'components/MovieBlock.vue'
-import { BootstrapVue } from 'bootstrap-vue'
-import { apolloProvider } from 'utils/apolloConfiguration'
-import Vuetify from 'vuetify'
-import VueApollo from 'vue-apollo'
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap-vue/dist/bootstrap-vue.css"
+import Vue from "vue";
+import MovieRow from "components/MovieRow.vue";
+import { BootstrapVue } from "bootstrap-vue";
+import { apolloProvider } from "utils/apolloConfiguration";
+import VueApollo from "vue-apollo";
+import Vuetify from "vuetify";
+import "vuetify/dist/vuetify.min.css";
 
-//Vue.use(VueRouter)
-Vue.use(VueApollo)
-Vue.use(BootstrapVue)
-Vue.use(Vuetify)
+Vue.use(VueApollo);
+Vue.use(BootstrapVue);
+Vue.use(Vuetify);
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   new Vue({
-    el: '#yts',
-    //router,
+    el: "#yts",
     apolloProvider,
-    render: h => h(MovieBlock),
+    render: (h) => h(MovieRow),
   });
 });
