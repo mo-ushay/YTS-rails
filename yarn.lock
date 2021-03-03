@@ -6402,6 +6402,44 @@ graphql-extensions@^0.12.8:
     apollo-server-env "^3.0.0"
     apollo-server-types "^0.6.3"
 
+graphql-language-service-interface@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.npm.taobao.org/graphql-language-service-interface/download/graphql-language-service-interface-2.8.2.tgz#b3bb2aef7eaf0dff0b4ea419fa412c5f66fa268b"
+  integrity sha1-s7sq736vDf8LTqQZ+kEsX2b6Jos=
+  dependencies:
+    graphql-language-service-parser "^1.9.0"
+    graphql-language-service-types "^1.8.0"
+    graphql-language-service-utils "^2.5.1"
+    vscode-languageserver-types "^3.15.1"
+
+graphql-language-service-parser@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.npm.taobao.org/graphql-language-service-parser/download/graphql-language-service-parser-1.9.0.tgz#79af21294119a0a7e81b6b994a1af36833bab724"
+  integrity sha1-ea8hKUEZoKfoG2uZShrzaDO6tyQ=
+  dependencies:
+    graphql-language-service-types "^1.8.0"
+
+graphql-language-service-types@^1.8.0:
+  version "1.8.1"
+  resolved "https://registry.npm.taobao.org/graphql-language-service-types/download/graphql-language-service-types-1.8.1.tgz#963810010924f2b5eaea415d5b8eb0b7d42c479b"
+  integrity sha1-ljgQAQkk8rXq6kFdW46wt9QsR5s=
+
+graphql-language-service-utils@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.npm.taobao.org/graphql-language-service-utils/download/graphql-language-service-utils-2.5.1.tgz#832ad4b0a9da03fdded756932c27e057ccf71302"
+  integrity sha1-gyrUsKnaA/3e11aTLCfgV8z3EwI=
+  dependencies:
+    graphql-language-service-types "^1.8.0"
+    nullthrows "^1.0.0"
+
+graphql-language-service@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.npm.taobao.org/graphql-language-service/download/graphql-language-service-3.1.2.tgz#6f50d5d824ea09c402cb02902b10e54b9da899d5"
+  integrity sha1-b1DV2CTqCcQCywKQKxDlS52omdU=
+  dependencies:
+    graphql-language-service-interface "^2.8.2"
+    graphql-language-service-types "^1.8.0"
+
 graphql-subscriptions@^1.0.0, graphql-subscriptions@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/graphql-subscriptions/download/graphql-subscriptions-1.2.0.tgz#d82ff76e7504ac91acbbea15f36cd3904043937b"
@@ -8538,7 +8576,7 @@ null-loader@^3.0.0:
     loader-utils "^1.2.3"
     schema-utils "^1.0.0"
 
-nullthrows@^1.1.1:
+nullthrows@^1.0.0, nullthrows@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/nullthrows/download/nullthrows-1.1.1.tgz#7818258843856ae971eae4208ad7d7eb19a431b1"
   integrity sha1-eBgliEOFaulx6uQgitfX6xmkMbE=
@@ -12084,6 +12122,11 @@ vscode-languageserver-types@3.14.0:
   resolved "https://registry.npm.taobao.org/vscode-languageserver-types/download/vscode-languageserver-types-3.14.0.tgz#d3b5952246d30e5241592b6dde8280e03942e743"
   integrity sha1-07WVIkbTDlJBWStt3oKA4DlC50M=
 
+vscode-languageserver-types@^3.15.1:
+  version "3.16.0"
+  resolved "https://registry.npm.taobao.org/vscode-languageserver-types/download/vscode-languageserver-types-3.16.0.tgz#ecf393fc121ec6974b2da3efb3155644c514e247"
+  integrity sha1-7POT/BIexpdLLaPvsxVWRMUU4kc=
+
 vscode-languageserver@^5.1.0:
   version "5.2.1"
   resolved "https://registry.npm.taobao.org/vscode-languageserver/download/vscode-languageserver-5.2.1.tgz?cache=0&sync_timestamp=1613649339713&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvscode-languageserver%2Fdownload%2Fvscode-languageserver-5.2.1.tgz#0d2feddd33f92aadf5da32450df498d52f6f14eb"
@@ -12144,10 +12187,10 @@ vue-cli-plugin-apollo@~0.22.2:
     subscriptions-transport-ws "^0.9.16"
     ts-node "^8.10.2"
 
-vue-cli-plugin-vuetify@~2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/vue-cli-plugin-vuetify/download/vue-cli-plugin-vuetify-2.1.0.tgz?cache=0&sync_timestamp=1611735281312&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-cli-plugin-vuetify%2Fdownload%2Fvue-cli-plugin-vuetify-2.1.0.tgz#1261d5866bca8f5c256f1b13abad2568fbcd6bb2"
-  integrity sha1-EmHVhmvKj1wlbxsTq60laPvNa7I=
+vue-cli-plugin-vuetify@~2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npm.taobao.org/vue-cli-plugin-vuetify/download/vue-cli-plugin-vuetify-2.2.1.tgz#0b7584a82c153625b3b8b050ec7f1ab5a5dcf7e0"
+  integrity sha1-C3WEqCwVNiWzuLBQ7H8ataXc9+A=
   dependencies:
     null-loader "^3.0.0"
     semver "^7.1.2"

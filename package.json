@@ -39,10 +39,11 @@
     "sass": "^1.32.0",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-apollo": "~0.22.2",
-    "vue-cli-plugin-vuetify": "~2.1.0",
+    "vue-cli-plugin-vuetify": "~2.2.1",
     "vue-cli-plugin-yaml": "^1.0.2",
     "vuetify-loader": "^1.7.0",
     "webpack-assets-manifest": "^5.0.1",
     "webpack-dev-server": "^3.11.1"
-  }
+  },
+  "vuetify-loader": "^1.7.0"
 }
