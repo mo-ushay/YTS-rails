@@ -1,9 +1,11 @@
 query retrieveMovies {
-  movies{
+  movies {
     id
     name
-    releaseDate
-    downloads
+    languages
+    videoQuality
+    genres
     synopsis
+    releaseDate
   }
 }

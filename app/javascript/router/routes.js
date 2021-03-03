@@ -1,27 +1,33 @@
-import MovieBlock from "components/MovieBlock.vue";
-import Home from "components/Home.vue"
-import About from "components/About.vue"
+import MovieRow from "components/MovieRow.vue";
+import Home from "components/Home.vue";
+import About from "components/About.vue";
+import MovieInfo from "components/MovieInfo.vue";
+import VueRouter from "vue-router";
+import Vue from "vue";
 
-export const MovieBlockRoutes = [
-	{
-    path: '/movies',
-    name: 'MovieBlock',
-    component: MovieBlock
-	}
-];
+Vue.use(VueRouter);
 
-export const HomeRoutes = [
+export const Routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-	}
-];
-
-export const AboutRoutes = [
+    path: "/movies",
+    name: "MovieRow",
+    component: MovieRow,
+    props: true
+  },
   {
-    path: '/about',
-    name: 'About',
-    component: About
-	}
+    path: "/",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: About,
+  },
+  {
+    path: "/details",
+    name: "MovieInfo",
+    component: MovieInfo,
+  },
 ];
+ 

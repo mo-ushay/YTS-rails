@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'homes#index'
+  get '/movies', to: 'movies#index'
 
-  get '/', to: 'homes#index'
 
   resources :movies do
     resources :feedbacks, only: %i[create update destroy], shallow: true

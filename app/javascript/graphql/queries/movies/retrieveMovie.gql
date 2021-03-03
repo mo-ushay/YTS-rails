@@ -1,6 +1,10 @@
-query GET_MOVIE {
-  movie{
+query GET_MOVIE($id: ID!) {
+  movie(id: $id) {
+    id
     name
-    release_date
+    languages
+    videoQuality
+    genres
+    synopsis
   }
 }

@@ -1,4 +1,5 @@
 <template>
+  <!-- <router-view /> -->
   <div class="container-fluid">
     <div class="popular-downloads-container">
       <div class="container">
@@ -8,7 +9,9 @@
           </h2>
         </div>
       </div>
-      <MovieRow />
+      <router-view to="details">
+        <MovieRow />
+      </router-view>
     </div>
     <div class="latest-movies-container">
       <div class="container">
@@ -18,7 +21,6 @@
           </h2>
         </row>
         <MovieRow />
-        <MovieRow />
       </div>
     </div>
   </div>
@@ -26,7 +28,7 @@
 
 <script>
 // @ is an alias to /src
-import MovieRow from "@/components/MovieRow.vue";
+import MovieRow from "components/MovieRow.vue";
 export default {
   name: "Home",
   components: {
@@ -36,6 +38,10 @@ export default {
 </script>
 
 <style scoped>
+.container-fluid {
+  color: #1d1d1d;
+  padding: auto;
+}
 .popular-downloads-container {
   background-color: #1d1d1d;
   text-align: center;
