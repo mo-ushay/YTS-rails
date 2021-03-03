@@ -9,17 +9,15 @@
           </h2>
         </div>
       </div>
-      <router-view to="details">
-        <MovieRow />
-      </router-view>
+      <MovieRow />
     </div>
     <div class="latest-movies-container">
       <div class="container">
-        <row>
+        <!-- <row> -->
           <h2 class="popular-downloads-wrapper mt-40">
             Recent Releases
           </h2>
-        </row>
+        <!-- </row> -->
         <MovieRow />
       </div>
     </div>

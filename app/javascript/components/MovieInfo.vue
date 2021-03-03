@@ -1,69 +1,57 @@
 <template>
   <div>
     <div class=" container mt-3">
-      <tr v-for="movie in movies" :key="movie.id">
-        <div class="row">
-          <div class="col-sm-12 col-md-10 col-lg-6">
-            <div class="col-12 ">
-              <img
-                height="520px"
-                width="375px"
-                src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/wonder-woman-1984-poster-1606931235.jpg?resize=768:*"
-              />
-            </div>
-          </div>
-          <div
-            class="col-sm-12 col-md-10 col-lg-6 text-left bg-dark text-white info"
-          >
-            <div class="col-12 text-center">
-              <h2>{{ movie.name }}</h2>
-            </div>
-            <hr />
-            <div class="col-12">
-              <p><strong>Released: </strong>{{ movie.releaseDate }}</p>
-            </div>
-            <div class="col-12">
-              <p><strong>Genre: </strong>{{ movie.genres }}</p>
-            </div>
-            <div class="col-12">
-              <p><strong>Available in: </strong>{{ movie.videoQuality }}</p>
-            </div>
-            <div class="col-12">
-              <p><strong>Languages: </strong>{{ movie.languages }}</p>
-            </div>
-            <div class="col-12">
-              <p><strong>Director: </strong>Ushay</p>
-            </div>
-            <div class="col-12">
-              <p><strong>Cast: </strong>Ushay Sendoso</p>
-            </div>
-            <div class="col-12">
-              <p><strong>Synopsis: </strong>{{ movie.synopsis }}</p>
-            </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-6">
+          <div class="col-12 ">
+            <img
+              height="520px"
+              width="375px"
+              src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/wonder-woman-1984-poster-1606931235.jpg?resize=768:*"
+            />
           </div>
         </div>
-
-        <br />
-      </tr>
+        <div
+          class="col-sm-12 col-md-10 col-lg-6 text-left bg-dark text-white info"
+        >
+          <div class="col-12 text-center">
+            <h2>{{ movie.name }}</h2>
+          </div>
+          <hr />
+          <div class="col-12">
+            <p><strong>Released: </strong>{{ movie.releaseDate }}</p>
+          </div>
+          <div class="col-12">
+            <p><strong>Genre: </strong>{{ movie.genres }}</p>
+          </div>
+          <div class="col-12">
+            <p><strong>Available in: </strong>{{ movie.videoQuality }}</p>
+          </div>
+          <div class="col-12">
+            <p><strong>Languages: </strong>{{ movie.languages }}</p>
+          </div>
+          <div class="col-12">
+            <p><strong>Director: </strong>Ushay</p>
+          </div>
+          <div class="col-12">
+            <p><strong>Cast: </strong>Ushay Sendoso</p>
+          </div>
+          <div class="col-12">
+            <p><strong>Synopsis: </strong>{{ movie.synopsis }}</p>
+          </div>
+        </div>
+      </div>
+      <br />
     </div>
   </div>
 </template>
 
 <script>
-import GET_MOVIES from "graphql/queries/movies/retrieveMovies.gql";
 export default {
   name: "MovieInfo",
-  apollo: {
-    movies: {
-      query: GET_MOVIES,
-      update: (data) => data.movies,
-    },
-  },
-  data() {
-    return {
-      movies: [],
-    };
-  },
+  props: [
+    'movie'
+  ]
 };
 </script>
 
