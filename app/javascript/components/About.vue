@@ -1,10 +1,10 @@
 <template>
-  <div class="about">
-    <h1>Contact Us!</h1>
+  <div class="about-color">
+    <h1 style="color:black">Contact Us!</h1>
   </div>
 </template>
+
 <script>
-// @ is an alias to /src
 export default {
   name: "About",
 };

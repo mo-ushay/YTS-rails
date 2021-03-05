@@ -6,5 +6,6 @@ query GET_MOVIE($id: ID!) {
     videoQuality
     genres
     synopsis
+    releaseDate
   }
 }

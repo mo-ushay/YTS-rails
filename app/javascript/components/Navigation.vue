@@ -24,6 +24,9 @@
             >Movies</router-link
           >
         </li>
+        <li class="nav-item active">
+          <router-link to="/about" class="nav-link" href="#">About</router-link>
+        </li>
       </ul>
     </div>
   </nav>

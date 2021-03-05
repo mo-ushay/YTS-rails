@@ -1,10 +1,8 @@
-import Router from 'vue-router';
 import MovieRow from "components/MovieRow.vue";
 import Home from "components/Home.vue";
 import About from "components/About.vue";
 import MovieInfo from "components/MovieInfo.vue";
 import VueRouter from "vue-router";
-import Vue from "vue";
 
 let routes = [
   {
@@ -24,9 +22,10 @@ let routes = [
     component: About,
   },
   {
-    path: "/details",
+    path: "/details/:id",
     name: "MovieInfo",
     component: MovieInfo,
+    props: true
   },
 ];
  

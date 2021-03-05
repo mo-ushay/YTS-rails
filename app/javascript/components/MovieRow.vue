@@ -1,8 +1,7 @@
 <template>
   <v-container>
-    <!-- <h1 class="movie-tag">All Movies</h1> -->
     <v-row>
-      <tr v-for="movie in movies" :key="movie.id" @click="onClick">
+      <tr v-for="movie in movies" :key="movie.id">
         <v-col class="mb-3">
           <MovieBlock :movie="movie" />
         </v-col>
@@ -27,11 +26,6 @@ export default {
       update: (data) => data.movies,
     },
   },
-  methods: {
-    onClick() {
-      this.$router.push({ name: "MovieInfo" });
-    },
-  },
   data() {
     return {
       movies: [],
@@ -44,6 +38,6 @@ h1 {
   text-align: center;
 }
 .movie-tag {
-  color: rgb(78, 72, 72);
+  color: rgb(68, 63, 63);
 }
 </style>

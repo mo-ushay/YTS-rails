@@ -41,17 +41,33 @@
           </div>
         </div>
       </div>
+
       <br />
     </div>
   </div>
 </template>
 
 <script>
+import GET_MOVIE from "graphql/queries/movies/retrieveMovie.gql";
 export default {
   name: "MovieInfo",
-  props: [
-    'movie'
-  ]
+  apollo: {
+    movie: {
+      variables() {
+        return {
+          id: this.id,
+        };
+      },
+      query: GET_MOVIE,
+      update: (data) => data.movie,
+    },
+  },
+  data() {
+    return {
+      movie: [],
+    };
+  },
+  props: ["id"],
 };
 </script>
 

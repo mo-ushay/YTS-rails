@@ -1,5 +1,4 @@
 <template>
-  <!-- <router-view /> -->
   <div class="container-fluid">
     <div class="popular-downloads-container">
       <div class="container">
@@ -13,11 +12,9 @@
     </div>
     <div class="latest-movies-container">
       <div class="container">
-        <!-- <row> -->
-          <h2 class="popular-downloads-wrapper mt-40">
-            Recent Releases
-          </h2>
-        <!-- </row> -->
+        <h2 class="popular-downloads-wrapper mt-40">
+          Recent Releases
+        </h2>
         <MovieRow />
       </div>
     </div>
@@ -37,11 +34,11 @@ export default {
 
 <style scoped>
 .container-fluid {
-  color: #1d1d1d;
+  color: #060706;
   padding: auto;
 }
 .popular-downloads-container {
-  background-color: #1d1d1d;
+  background-color: #000000;
   text-align: center;
 }
 .popular-downloads-wrapper {
@@ -52,6 +49,6 @@ export default {
   margin-top: 20px;
 }
 .latest-movies-container {
-  background-color: #171717;
+  background-color: #000000;
 }
 </style>
