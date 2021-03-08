@@ -22,7 +22,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import MovieRow from "components/MovieRow.vue";
 export default {
   name: "Home",

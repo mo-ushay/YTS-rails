@@ -19,7 +19,7 @@
         <li class="nav-item active">
           <router-link to="/" class="nav-link" href="#">Home</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <router-link to="/movies" class="nav-link" href="#"
             >Movies</router-link
           >
